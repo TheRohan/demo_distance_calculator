@@ -17,14 +17,19 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.android.material.snackbar.Snackbar
 import com.rohan.demodistancecalculator.R
+import com.rohan.demodistancecalculator.adapters.IUpdateLocation
 import com.rohan.demodistancecalculator.data.db.DistanceInfo
 import com.rohan.demodistancecalculator.data.network.LocationResponse
 import com.rohan.demodistancecalculator.databinding.FragmentCreateDistanceBinding
+import com.rohan.demodistancecalculator.other.Constants.DEF_LAT
+import com.rohan.demodistancecalculator.other.Constants.DEF_LON
 import com.rohan.demodistancecalculator.other.Constants.POLYLINE_COLOR
 import com.rohan.demodistancecalculator.other.Constants.POLYLINE_WIDTH
 import com.rohan.demodistancecalculator.other.Resource
+import com.rohan.demodistancecalculator.other.Utility
 import com.rohan.demodistancecalculator.other.Utility.getDistanceInKm
 import com.rohan.demodistancecalculator.other.Utility.getDistanceInM
+import com.rohan.demodistancecalculator.ui.dialogs.LocationSelectDialogFragment
 import com.rohan.demodistancecalculator.ui.viewmodels.CreateDistanceViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -64,23 +69,21 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
 
         //1
         binding.bRandom1.setOnClickListener {
-//            viewModel.setNewStartPoint(Utility.createRandomLatLng())
-            viewModel.setNewStartPoint(LatLng(59.91166, 10.74738))
+            viewModel.setNewStartPoint(Utility.createRandomLatLng())
+//            viewModel.setNewStartPoint(LatLng(59.91166, 10.74738)) // for test
         }
         binding.bOpenMap1.setOnClickListener {
-            //TODO
+            openMapPointPicker(true)
         }
 
         //2
         binding.bRandom2.setOnClickListener {
-            viewModel.setNewEndPoint(LatLng(59.36233, 13.54567))
-
-//            viewModel.setNewEndPoint(Utility.createRandomLatLng())
+            viewModel.setNewEndPoint(Utility.createRandomLatLng())
+//            viewModel.setNewEndPoint(LatLng(59.36233, 13.54567)) //for test
         }
         binding.bOpenMap2.setOnClickListener {
-            //TODO
+            openMapPointPicker(false)
         }
-
 
         lifecycleScope.launch {
             viewModel.startPoint.collectLatest {
@@ -146,9 +149,37 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
             }
         }
 
-
         updateButtonAlpha()
+    }
 
+    private fun openMapPointPicker(isStartPoint: Boolean) {
+        val lat: Float
+        val lon: Float
+
+        if (isStartPoint) {
+            lat = viewModel.startPoint.value.data?.lat?.toFloatOrNull() ?: DEF_LAT
+            lon = viewModel.startPoint.value.data?.lon?.toFloatOrNull() ?: DEF_LON
+        } else {
+            lat = viewModel.endPoint.value.data?.lat?.toFloatOrNull() ?: DEF_LAT
+            lon = viewModel.endPoint.value.data?.lon?.toFloatOrNull() ?: DEF_LON
+        }
+
+        val dialog = LocationSelectDialogFragment().apply {
+            initDialog(
+                lat,
+                lon,
+                object : IUpdateLocation {
+                    override fun updateLatLng(pos: LatLng) {
+                        if (isStartPoint) {
+                            viewModel.setNewStartPoint(pos)
+                        } else {
+                            viewModel.setNewEndPoint(pos)
+                        }
+                    }
+                }
+            )
+        }
+        activity?.let { dialog.show(it.supportFragmentManager, LocationSelectDialogFragment.TAG) }
     }
 
     private fun setNewDataToField(it: Resource<LocationResponse?>, isStartPoint: Boolean) {

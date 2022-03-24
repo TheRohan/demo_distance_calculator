@@ -26,9 +26,6 @@
         android:label="fragment_create_distance"
         tools:layout="@layout/fragment_create_distance">
         <action
-            android:id="@+id/action_createDistanceFragment2_to_locationSelectFragment"
-            app:destination="@id/locationSelectFragment" />
-        <action
             android:id="@+id/action_createDistanceFragment2_to_historyFragment"
             app:destination="@id/historyFragment" />
     </fragment>
@@ -56,14 +53,5 @@
         <action
             android:id="@+id/action_helloFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/locationSelectFragment"
-        android:name="com.rohan.demodistancecalculator.ui.fragments.LocationSelectFragment"
-        android:label="fragment_location_select"
-        tools:layout="@layout/fragment_location_select">
-        <action
-            android:id="@+id/action_locationSelectFragment_to_createDistanceFragment2"
-            app:destination="@id/createDistanceFragment2" />
     </fragment>
 </navigation>
