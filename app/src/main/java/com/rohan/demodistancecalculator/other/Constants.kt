@@ -6,4 +6,9 @@ object Constants {
     const val TIME_CREATE_SORT_KEY = "time"
     const val DISTANCE_SORT_KEY = "distance"
 
+
+    const val ENDPOINT = "https://nominatim.openstreetmap.org/"
+
+
+
 }

@@ -11,10 +11,10 @@ data class DistanceInfo(
     var img: Bitmap? = null,
 
     @Embedded(prefix = "location_info_1")
-    var locationInfo1: LocationInfo? = null,
+    var locationInfo1: LocationInfo,
 
     @Embedded(prefix = "location_info_2")
-    var locationInfo2: LocationInfo? = null,
+    var locationInfo2: LocationInfo,
 
     var distanceInM: Int = 0,
     var distanceInKM: Int = 0,
