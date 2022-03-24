@@ -1,7 +1,8 @@
-package com.rohan.demodistancecalculator
+package com.rohan.demodistancecalculator.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rohan.demodistancecalculator.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
