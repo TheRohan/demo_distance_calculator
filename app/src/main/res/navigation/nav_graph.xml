@@ -9,7 +9,7 @@
         android:id="@+id/historyFragment"
         android:name="com.rohan.demodistancecalculator.ui.fragments.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" >
+        tools:layout="@layout/fragment_history">
         <action
             android:id="@+id/action_historyFragment_to_helloFragment"
             app:destination="@id/helloFragment" />
@@ -24,28 +24,32 @@
         android:id="@+id/createDistanceFragment2"
         android:name="com.rohan.demodistancecalculator.ui.fragments.CreateDistanceFragment"
         android:label="fragment_create_distance"
-        tools:layout="@layout/fragment_create_distance" >
+        tools:layout="@layout/fragment_create_distance">
         <action
             android:id="@+id/action_createDistanceFragment2_to_locationSelectFragment"
             app:destination="@id/locationSelectFragment" />
         <action
-            android:id="@+id/action_createDistanceFragment2_to_distanceInfoFragment"
-            app:destination="@id/distanceInfoFragment" />
+            android:id="@+id/action_createDistanceFragment2_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/distanceInfoFragment"
         android:name="com.rohan.demodistancecalculator.ui.fragments.DistanceInfoFragment"
         android:label="fragment_distance_info"
-        tools:layout="@layout/fragment_distance_info" >
+        tools:layout="@layout/fragment_distance_info">
+        <argument
+            android:name="distanceInfoId"
+            android:defaultValue="-1"
+            app:argType="integer" />
         <action
-                android:id="@+id/action_distanceInfoFragment_to_historyFragment"
+            android:id="@+id/action_distanceInfoFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/helloFragment"
         android:name="com.rohan.demodistancecalculator.ui.fragments.HelloFragment"
         android:label="fragment_hello"
-        tools:layout="@layout/fragment_hello" >
+        tools:layout="@layout/fragment_hello">
         <action
             android:id="@+id/action_helloFragment_to_createDistanceFragment2"
             app:destination="@id/createDistanceFragment2" />
@@ -57,7 +61,7 @@
         android:id="@+id/locationSelectFragment"
         android:name="com.rohan.demodistancecalculator.ui.fragments.LocationSelectFragment"
         android:label="fragment_location_select"
-        tools:layout="@layout/fragment_location_select" >
+        tools:layout="@layout/fragment_location_select">
         <action
             android:id="@+id/action_locationSelectFragment_to_createDistanceFragment2"
             app:destination="@id/createDistanceFragment2" />

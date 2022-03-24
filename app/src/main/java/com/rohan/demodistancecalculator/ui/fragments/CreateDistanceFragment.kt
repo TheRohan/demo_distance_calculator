@@ -18,22 +18,17 @@ import com.google.android.gms.maps.model.PolylineOptions
 import com.google.android.material.snackbar.Snackbar
 import com.rohan.demodistancecalculator.R
 import com.rohan.demodistancecalculator.data.db.DistanceInfo
-import com.rohan.demodistancecalculator.data.db.LocationInfo
 import com.rohan.demodistancecalculator.data.network.LocationResponse
 import com.rohan.demodistancecalculator.databinding.FragmentCreateDistanceBinding
 import com.rohan.demodistancecalculator.other.Constants.POLYLINE_COLOR
 import com.rohan.demodistancecalculator.other.Constants.POLYLINE_WIDTH
 import com.rohan.demodistancecalculator.other.Resource
-import com.rohan.demodistancecalculator.other.Utility
 import com.rohan.demodistancecalculator.other.Utility.getDistanceInKm
 import com.rohan.demodistancecalculator.other.Utility.getDistanceInM
 import com.rohan.demodistancecalculator.ui.viewmodels.CreateDistanceViewModel
-import com.rohan.demodistancecalculator.ui.viewmodels.HistoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import java.util.*
-import kotlin.math.round
 
 @AndroidEntryPoint
 class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
@@ -91,6 +86,9 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
             viewModel.startPoint.collectLatest {
                 if (it.data != null) {
                     setNewDataToField(it, true)
+
+                    zoomToSeeWholeTrack()
+                    redrawLine()
                 }
             }
         }
@@ -99,6 +97,9 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
             viewModel.endPoint.collectLatest {
                 if (it.data != null) {
                     setNewDataToField(it, false)
+
+                    zoomToSeeWholeTrack()
+                    redrawLine()
                 }
             }
         }
@@ -135,14 +136,12 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
                             viewModel.createDistanceInfo(toSave)
 
                             findNavController().navigate(
-                                R.id.action_createDistanceFragment2_to_distanceInfoFragment,
+                                R.id.action_createDistanceFragment2_to_historyFragment,
                                 savedInstanceState,
                                 navOptions
                             )
                         }
                     }
-
-
                 }
             }
         }

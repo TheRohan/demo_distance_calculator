@@ -11,4 +11,5 @@ interface DBRepository {
 
     fun filterBy(column : String) : Flow<List<DistanceInfo>>
 
+    fun getById(id: Int): Flow<DistanceInfo?>
 }

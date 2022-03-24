@@ -23,4 +23,11 @@ interface DistanceInfoDAO {
     """
     )
     fun filterBy(column: String): Flow<List<DistanceInfo>>
+
+    @Query(
+        """
+        SELECT * FROM distance_info_table WHERE id = :id
+    """
+    )
+    fun getById(id: Int): Flow<DistanceInfo?>
 }

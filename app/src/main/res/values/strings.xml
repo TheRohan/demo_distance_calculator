@@ -19,7 +19,7 @@
     <string name="lat_info">Lat:</string>
     <string name="lon_info">Lon:</string>
     <string name="county_info">County:</string>
-    <string name="city_info">City:</string>
+    <string name="state_info">State:</string>
     <string name="info">Info</string>
     <string name="distance_m">Distance M:</string>
     <string name="distance_km">Distance KM:</string>

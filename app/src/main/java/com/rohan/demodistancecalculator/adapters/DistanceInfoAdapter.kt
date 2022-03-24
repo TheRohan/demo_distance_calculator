@@ -11,12 +11,14 @@ import com.rohan.demodistancecalculator.R
 import com.rohan.demodistancecalculator.data.db.DistanceInfo
 import com.rohan.demodistancecalculator.databinding.DistanceItemElementBinding
 import com.rohan.demodistancecalculator.other.Utility.formatFloatToDisplay
+import com.rohan.demodistancecalculator.other.Utility.millsToText
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class DistanceInfoAdapter(
-    val c: Context
+    private val c: Context,
+    private val iSelectItem: ISelectItem,
 ) : RecyclerView.Adapter<DistanceInfoAdapter.DistanceInfoViewHolder>() {
 
     val diffCallback = object : DiffUtil.ItemCallback<DistanceInfo>() {
@@ -62,11 +64,14 @@ class DistanceInfoAdapter(
             binding.tvDistance.text =
                 "${c.getString(R.string.distance_m)}\t\t${item.distanceInM}m"
 
-            val formatter = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
-            val dateString = formatter.format(Date(item.createdDate))
+            val dateString = millsToText(item.createdDate)
 
             binding.tvDate.text =
                 "${c.getString(R.string.date)}\t\t$dateString"
+
+            binding.holder.setOnClickListener {
+                iSelectItem.itemSelect(item.id ?: -1)
+            }
         }
     }
 

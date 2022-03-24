@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rohan.demodistancecalculator.R
 import com.rohan.demodistancecalculator.adapters.DistanceInfoAdapter
+import com.rohan.demodistancecalculator.adapters.ISelectItem
 import com.rohan.demodistancecalculator.databinding.FragmentHistoryBinding
 import com.rohan.demodistancecalculator.other.SortType
 import com.rohan.demodistancecalculator.ui.viewmodels.HistoryViewModel
@@ -20,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
-class HistoryFragment : Fragment(R.layout.fragment_history) {
+class HistoryFragment : Fragment(R.layout.fragment_history), ISelectItem {
 
     lateinit var binding: FragmentHistoryBinding
 
@@ -79,9 +80,16 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
 
     private fun setupRecyclerView() = binding.rv.apply {
         val context = requireContext()
-        distanceInfoAdapter = DistanceInfoAdapter(context)
+        distanceInfoAdapter = DistanceInfoAdapter(context, this@HistoryFragment)
         adapter = distanceInfoAdapter
         layoutManager = LinearLayoutManager(context)
+    }
+
+    override fun itemSelect(id: Int) {
+        if (id > 0){
+            val action = HistoryFragmentDirections.actionHistoryFragmentToDistanceInfoFragment(id)
+            findNavController().navigate(action)
+        }
     }
 
 }

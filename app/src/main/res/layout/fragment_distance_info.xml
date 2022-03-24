@@ -141,7 +141,7 @@
                     android:layout_marginStart="@dimen/normal_space"
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
-                    android:text="@string/city_info"
+                    android:text="@string/state_info"
                     android:textSize="20sp" />
 
 
@@ -272,7 +272,7 @@
                     android:layout_marginStart="@dimen/normal_space"
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
-                    android:text="@string/city_info"
+                    android:text="@string/state_info"
                     android:textSize="20sp" />
 
 

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 
 class DBRepositoryImpl @Inject constructor(
-    val distanceInfoDAO: DistanceInfoDAO
+    private val distanceInfoDAO: DistanceInfoDAO
 ) : DBRepository {
 
     override suspend fun insertDistanceInfo(distanceInfo: DistanceInfo) {
@@ -20,5 +20,9 @@ class DBRepositoryImpl @Inject constructor(
 
     override fun filterBy(column: String): Flow<List<DistanceInfo>> {
         return distanceInfoDAO.filterBy(column)
+    }
+
+    override fun getById(id: Int): Flow<DistanceInfo?>{
+        return distanceInfoDAO.getById(id)
     }
 }
