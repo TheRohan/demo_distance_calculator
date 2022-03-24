@@ -1,7 +1,11 @@
 package com.rohan.demodistancecalculator.di
 
+import com.rohan.demodistancecalculator.data.db.DistanceInfoDatabase
 import com.rohan.demodistancecalculator.data.network.DistanceNetworkServices
 import com.rohan.demodistancecalculator.other.Constants.ENDPOINT
+import com.rohan.demodistancecalculator.repositories.DBRepository
+import com.rohan.demodistancecalculator.repositories.DBRepositoryImpl
+import com.rohan.demodistancecalculator.repositories.NetworkRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -49,5 +53,13 @@ class ApiModule {
     fun provideMovieAppService(retrofit: Retrofit): DistanceNetworkServices {
         return retrofit.create(DistanceNetworkServices::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun provideNetworkRepository(distanceNetworkServices: DistanceNetworkServices): NetworkRepository {
+        return NetworkRepository(distanceNetworkServices)
+    }
+
+
 
 }

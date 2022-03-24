@@ -4,10 +4,11 @@ import com.rohan.demodistancecalculator.data.db.DistanceInfo
 import kotlinx.coroutines.flow.Flow
 
 
-interface MainRepository {
-    suspend fun insertDistanceInfo(run: DistanceInfo)
+interface DBRepository {
+    suspend fun insertDistanceInfo(distanceInfo: DistanceInfo)
 
-    suspend fun deleteDistanceInfo(run: DistanceInfo)
+    suspend fun deleteDistanceInfo(distanceInfo: DistanceInfo)
 
     fun filterBy(column : String) : Flow<List<DistanceInfo>>
+
 }

@@ -4,20 +4,11 @@ import com.rohan.demodistancecalculator.data.db.LocationInfo
 
 data class LocationResponse(
     val address: Address?,
-    val addresstype: String?,
-    val boundingbox: List<String>?,
-    val category: String?,
     val display_name: String?,
-    val importance: Int?,
     val lat: String?,
     val licence: String?,
     val lon: String?,
-    val name: String?,
-    val osm_id: Long?,
-    val osm_type: String?,
-    val place_id: Int?,
-    val place_rank: Int?,
-    val type: String?
+    val name: String?
 ) {
     fun convertToLocationInfo() = LocationInfo(
         lat = lat?.toFloatOrNull() ?: 0f,
@@ -32,11 +23,5 @@ data class LocationResponse(
 data class Address(
     val city: String?,
     val country: String?,
-    val country_code: String?,
-    val highway: String?,
-    val postcode: String?,
-    val road: String?,
     val state: String?,
-    val state_district: String?,
-    val town: String?
 )

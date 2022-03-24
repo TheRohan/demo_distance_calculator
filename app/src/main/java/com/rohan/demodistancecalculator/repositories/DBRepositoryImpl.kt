@@ -6,19 +6,19 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 
-class MainRepositoryImpl @Inject constructor(
-    val DistanceInfoDAO: DistanceInfoDAO
-) : MainRepository {
+class DBRepositoryImpl @Inject constructor(
+    val distanceInfoDAO: DistanceInfoDAO
+) : DBRepository {
 
     override suspend fun insertDistanceInfo(distanceInfo: DistanceInfo) {
-        DistanceInfoDAO.insertDistanceInfo(distanceInfo)
+        distanceInfoDAO.insertDistanceInfo(distanceInfo)
     }
 
     override suspend fun deleteDistanceInfo(distanceInfo: DistanceInfo) {
-        DistanceInfoDAO.deleteDistanceInfo(distanceInfo)
+        distanceInfoDAO.deleteDistanceInfo(distanceInfo)
     }
 
     override fun filterBy(column: String): Flow<List<DistanceInfo>> {
-        return DistanceInfoDAO.filterBy(column)
+        return distanceInfoDAO.filterBy(column)
     }
 }

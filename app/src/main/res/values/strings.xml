@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">DemoDistanceCalculator</string>
-    <string name="google_maps_key">...</string>
+    <string name="google_maps_key"></string>
 
     <string name="add">Add</string>
     <string name="sort_by">Sort by:</string>
@@ -12,6 +12,7 @@
     <string name="start_point">Start point:</string>
     <string name="end_point">End point:</string>
     <string name="lat">lat</string>
+    <string name="lon">lon</string>
     <string name="randomize">Randomize</string>
     <string name="display_on_map">Display on map</string>
     <string name="ok">OK</string>
@@ -23,6 +24,8 @@
     <string name="distance_m">Distance M:</string>
     <string name="distance_km">Distance KM:</string>
     <string name="date">Date:</string>
+    <string name="default_err">Something went wrong</string>
+    <string name="no_place_err">No data found, please select other place</string>
 
     <string-array name="filter_options">
         <item>Date</item>

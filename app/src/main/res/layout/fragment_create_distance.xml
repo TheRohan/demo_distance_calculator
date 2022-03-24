@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.CreateDistanceFragment">
 
+    <com.google.android.gms.maps.MapView
+        android:visibility="invisible"
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -47,13 +57,19 @@
                 android:id="@+id/tilLat1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/normal_space">
+                android:layout_marginTop="@dimen/normal_space"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etLat1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
                     android:ems="16"
+                    android:focusable="false"
                     android:hint="@string/lat"
                     android:inputType="numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -62,14 +78,20 @@
                 android:id="@+id/tilLon1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/normal_space">
+                android:layout_marginTop="@dimen/normal_space"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etLon1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
                     android:ems="16"
-                    android:hint="@string/lat"
+                    android:focusable="false"
+                    android:hint="@string/lon"
                     android:inputType="numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,7 +137,10 @@
                     android:id="@+id/etLat2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
                     android:ems="16"
+                    android:focusable="false"
                     android:hint="@string/lat"
                     android:inputType="numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -130,8 +155,11 @@
                     android:id="@+id/etLon2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
                     android:ems="16"
-                    android:hint="@string/lat"
+                    android:focusable="false"
+                    android:hint="@string/lon"
                     android:inputType="numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
 

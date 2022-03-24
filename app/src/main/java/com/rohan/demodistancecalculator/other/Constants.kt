@@ -1,5 +1,7 @@
 package com.rohan.demodistancecalculator.other
 
+import android.graphics.Color
+
 object Constants {
     const val DISTANCE_DATABASE_NAME = "distance_db"
 
@@ -13,6 +15,12 @@ object Constants {
     const val SHARED_PREFERENCES_NAME = "sharedPref"
     const val KEY_FIRST_TIME_TOGGLE = "KEY_FIRST_TIME_TOGGLE"
 
+    const val DEF_LAT = 0f
+    const val DEF_LON = 0f
+
+    const val POLYLINE_COLOR = Color.RED
+    const val POLYLINE_WIDTH = 8f
+    const val MAP_ZOOM = 15f
 
 
 }
