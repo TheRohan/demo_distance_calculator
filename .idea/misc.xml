@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/distance_item_element.xml" value="0.31230926513671875" />
+        <entry key="app/src/main/res/layout/fragment_create_distance.xml" value="0.2982940673828126" />
+        <entry key="app/src/main/res/layout/fragment_distance_info.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/fragment_hello.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.22719421386718752" />
+        <entry key="app/src/main/res/layout/fragment_location_select.xml" value="0.22327898550724637" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

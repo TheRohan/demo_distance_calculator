@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">DemoDistanceCalculator</string>
+
+    <string name="add">Add</string>
+    <string name="sort_by">Sort by:</string>
+    <string name="hello_text_1">Hello!</string>
+    <string name="hello_text_2">First time here?</string>
+    <string name="hello_text_3">Tab the button below and let\'s start…</string>
+    <string name="next">Next</string>
+    <string name="choose_points">Choose points!</string>
+    <string name="start_point">Start point:</string>
+    <string name="end_point">End point:</string>
+    <string name="lat">lat</string>
+    <string name="randomize">Randomize</string>
+    <string name="display_on_map">Display on map</string>
+    <string name="ok">OK</string>
+    <string name="lat_info">Lat:</string>
+    <string name="lon_info">Lon:</string>
+    <string name="county_info">County:</string>
+    <string name="city_info">City:</string>
+    <string name="info">Info</string>
+    <string name="distance_m">Distance M:</string>
+    <string name="distance_km">Distance KM:</string>
+    <string name="date">Date:</string>
+
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Distance</item>
+    </string-array>
+
 </resources>
