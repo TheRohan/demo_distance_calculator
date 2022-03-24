@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import com.rohan.demodistancecalculator.R
 import com.rohan.demodistancecalculator.databinding.FragmentCreateDistanceBinding
 import com.rohan.demodistancecalculator.databinding.FragmentLocationSelectBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
     lateinit var binding: FragmentCreateDistanceBinding
 

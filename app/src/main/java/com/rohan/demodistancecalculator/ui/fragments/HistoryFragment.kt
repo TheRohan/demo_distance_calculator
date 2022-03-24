@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rohan.demodistancecalculator.R
 import com.rohan.demodistancecalculator.databinding.FragmentHistoryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
-class HistoryFragment : Fragment(R.layout.fragment_distance_info) {
+@AndroidEntryPoint
+class HistoryFragment : Fragment(R.layout.fragment_history) {
     lateinit var binding: FragmentHistoryBinding
 
     override fun onCreateView(

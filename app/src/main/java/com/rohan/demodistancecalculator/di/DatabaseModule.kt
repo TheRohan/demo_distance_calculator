@@ -5,6 +5,8 @@ import androidx.room.Room
 import com.rohan.demodistancecalculator.data.db.DistanceInfoDAO
 import com.rohan.demodistancecalculator.data.db.DistanceInfoDatabase
 import com.rohan.demodistancecalculator.other.Constants
+import com.rohan.demodistancecalculator.repositories.MainRepository
+import com.rohan.demodistancecalculator.repositories.MainRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,4 +32,10 @@ object DatabaseModule {
     @Provides
     fun provideRunDao(db: DistanceInfoDatabase): DistanceInfoDAO = db.dao
 
+
+    @Singleton
+    @Provides
+    fun provideMainRepository(db: DistanceInfoDatabase): MainRepository {
+        return MainRepositoryImpl(db.dao)
+    }
 }

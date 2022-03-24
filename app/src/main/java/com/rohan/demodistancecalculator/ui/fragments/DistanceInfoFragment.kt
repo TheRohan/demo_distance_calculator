@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rohan.demodistancecalculator.R
 import com.rohan.demodistancecalculator.databinding.FragmentDistanceInfoBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DistanceInfoFragment : Fragment(R.layout.fragment_distance_info) {
     lateinit var binding: FragmentDistanceInfoBinding
 

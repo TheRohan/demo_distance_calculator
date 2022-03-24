@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rohan.demodistancecalculator.R
 import com.rohan.demodistancecalculator.databinding.FragmentLocationSelectBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LocationSelectFragment : Fragment(R.layout.fragment_location_select) {
     lateinit var binding: FragmentLocationSelectBinding
 
