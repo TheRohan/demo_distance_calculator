@@ -26,8 +26,6 @@ class MainActivity : AppCompatActivity() {
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
 
-        setSupportActionBar(binding.toolbar)
-
         if (!isNetworkAvailable(this)) {
             MaterialAlertDialogBuilder(this)
                 .setTitle(resources.getText(R.string.error))
