@@ -1,5 +1,8 @@
 package com.rohan.demodistancecalculator.data.db
 
+import androidx.annotation.Keep
+
+@Keep
 data class LocationInfo(
     var lat: Float = 0f,
     var lon: Float = 0f,

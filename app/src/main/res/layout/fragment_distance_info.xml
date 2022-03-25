@@ -26,6 +26,7 @@
             <!-- From-->
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvStartPoint"
+                style="@style/Theme.DemoDistanceCalculator.TitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/normal_space"
@@ -35,6 +36,8 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvFullName1"
+
+                style="@style/Theme.DemoDistanceCalculator.HeadText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/normal_space"
@@ -58,7 +61,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/lat_info"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -69,7 +73,7 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- lon-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -86,7 +90,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/lon_info"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -97,7 +102,7 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- country-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -114,18 +119,20 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/county_info"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvCountry1"
                     android:layout_width="0dp"
+
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/small_space"
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- city-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -142,7 +149,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/state_info"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -153,12 +161,13 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- to-->
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvEndPoint"
+                style="@style/Theme.DemoDistanceCalculator.TitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/normal_space"
@@ -168,6 +177,8 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvFullName2"
+
+                style="@style/Theme.DemoDistanceCalculator.HeadText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/normal_space"
@@ -189,7 +200,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/lat_info"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -200,7 +212,7 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- lon-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -217,7 +229,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/lon_info"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -228,7 +241,7 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- country-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -245,7 +258,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/county_info"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -256,7 +270,7 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- city-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -273,7 +287,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/state_info"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -284,12 +299,13 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- Data-->
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvInfo"
+                style="@style/Theme.DemoDistanceCalculator.TitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/normal_space"
@@ -311,7 +327,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/distance_m"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -322,7 +339,7 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- km-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -338,7 +355,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/distance_km"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -349,7 +367,7 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- create date-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -365,7 +383,8 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/date"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -376,7 +395,7 @@
                     android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="123.123"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 

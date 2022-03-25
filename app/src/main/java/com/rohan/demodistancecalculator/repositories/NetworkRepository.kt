@@ -6,7 +6,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
 import javax.inject.Inject
-import javax.inject.Singleton
 
 class NetworkRepository @Inject constructor(
     private val distanceNetworkServices: DistanceNetworkServices

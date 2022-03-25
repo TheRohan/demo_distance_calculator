@@ -11,14 +11,19 @@
         android:label="fragment_history"
         tools:layout="@layout/fragment_history">
         <action
-            android:id="@+id/action_historyFragment_to_helloFragment"
-            app:destination="@id/helloFragment" />
-        <action
             android:id="@+id/action_historyFragment_to_distanceInfoFragment"
-            app:destination="@id/distanceInfoFragment" />
+            app:destination="@id/distanceInfoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_historyFragment_to_createDistanceFragment2"
-            app:destination="@id/createDistanceFragment2" />
+            app:destination="@id/createDistanceFragment2"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/createDistanceFragment2"
@@ -27,7 +32,11 @@
         tools:layout="@layout/fragment_create_distance">
         <action
             android:id="@+id/action_createDistanceFragment2_to_historyFragment"
-            app:destination="@id/historyFragment" />
+            app:destination="@id/historyFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/distanceInfoFragment"
@@ -40,7 +49,11 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_distanceInfoFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
+            app:destination="@id/historyFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/helloFragment"
@@ -49,9 +62,17 @@
         tools:layout="@layout/fragment_hello">
         <action
             android:id="@+id/action_helloFragment_to_createDistanceFragment2"
-            app:destination="@id/createDistanceFragment2" />
+            app:destination="@id/createDistanceFragment2"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_helloFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
+            app:destination="@id/historyFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
 </navigation>

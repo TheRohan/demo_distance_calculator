@@ -25,6 +25,10 @@
     <string name="distance_km">Distance KM:</string>
     <string name="date">Date:</string>
     <string name="default_err">Something went wrong</string>
+    <string name="place_recognized">Place found:</string>
+    <string name="error">Error</string>
+    <string name="network_error">This app require internet connection for stable work, please turn connection on</string>
+
     <string name="no_place_err">No data found, please select other place</string>
 
     <string-array name="filter_options">

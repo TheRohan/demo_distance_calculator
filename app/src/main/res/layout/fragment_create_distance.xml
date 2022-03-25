@@ -7,10 +7,10 @@
     tools:context=".ui.fragments.CreateDistanceFragment">
 
     <com.google.android.gms.maps.MapView
-        android:visibility="invisible"
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +32,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvTitle"
+                style="@style/Theme.DemoDistanceCalculator.TitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -47,11 +48,13 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvStartPoint"
+
+                style="@style/Theme.DemoDistanceCalculator.HeadText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/normal_space"
                 android:text="@string/start_point"
-                android:textSize="25sp" />
+                android:textSize="@dimen/large_text" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilLat1"
@@ -121,11 +124,13 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvEndPoint"
+
+                style="@style/Theme.DemoDistanceCalculator.HeadText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/normal_space"
                 android:text="@string/end_point"
-                android:textSize="25sp" />
+                android:textSize="@dimen/large_text" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilLat2"

@@ -70,7 +70,6 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
         //1
         binding.bRandom1.setOnClickListener {
             viewModel.setNewStartPoint(Utility.createRandomLatLng())
-//            viewModel.setNewStartPoint(LatLng(59.91166, 10.74738)) // for test
         }
         binding.bOpenMap1.setOnClickListener {
             openMapPointPicker(true)
@@ -79,7 +78,6 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
         //2
         binding.bRandom2.setOnClickListener {
             viewModel.setNewEndPoint(Utility.createRandomLatLng())
-//            viewModel.setNewEndPoint(LatLng(59.36233, 13.54567)) //for test
         }
         binding.bOpenMap2.setOnClickListener {
             openMapPointPicker(false)
@@ -92,6 +90,12 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
 
                     zoomToSeeWholeTrack()
                     redrawLine()
+                } else if (it is Resource.Error) {
+                    Snackbar.make(
+                        requireActivity().findViewById(R.id.rootView),
+                        it.message ?: getString(R.string.default_err),
+                        Snackbar.LENGTH_LONG
+                    ).show()
                 }
             }
         }
@@ -103,6 +107,12 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
 
                     zoomToSeeWholeTrack()
                     redrawLine()
+                } else if (it is Resource.Error) {
+                    Snackbar.make(
+                        requireActivity().findViewById(R.id.rootView),
+                        it.message ?: getString(R.string.default_err),
+                        Snackbar.LENGTH_LONG
+                    ).show()
                 }
             }
         }
@@ -191,6 +201,12 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
                         getString(R.string.no_place_err),
                         Snackbar.LENGTH_SHORT
                     ).show()
+                } else {
+                    Snackbar.make(
+                        requireActivity().findViewById(R.id.rootView),
+                        "${getString(R.string.place_recognized)} ${it.data.display_name}",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
                 }
 
                 if (isStartPoint) {
@@ -262,7 +278,7 @@ class CreateDistanceFragment : Fragment(R.layout.fragment_create_distance) {
                     bounds.build(),
                     binding.mapView.width,
                     binding.mapView.height,
-                    (binding.mapView.height * 0.05f).toInt()
+                    (binding.mapView.height * 0.1f).toInt()
                 )
             )
         }

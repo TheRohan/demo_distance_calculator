@@ -12,6 +12,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
@@ -30,28 +31,37 @@ class CreateDistanceViewModel @Inject constructor(
     fun setNewStartPoint(newVal: LatLng) = viewModelScope.launch {
         _startPoint.emit(Resource.Loading())
 
-        val result = networkRepository.fetchLocationInfo(
-            newVal.latitude.toFloat(),
-            newVal.longitude.toFloat()
-        )
-        if (result.isSuccessful && result.body() != null) {
-            _startPoint.emit(Resource.Success(result.body()))
-        } else {
-            _startPoint.emit(Resource.Error(result.message()))
+        try {
+            val result = networkRepository.fetchLocationInfo(
+                newVal.latitude.toFloat(),
+                newVal.longitude.toFloat()
+            )
+            if (result.isSuccessful && result.body() != null) {
+                _startPoint.emit(Resource.Success(result.body()))
+            } else {
+                _startPoint.emit(Resource.Error(result.message()))
+            }
+        } catch (e: Exception) {
+            _startPoint.emit(Resource.Error(e.message ?: ""))
         }
+
+
     }
 
     fun setNewEndPoint(newVal: LatLng) = viewModelScope.launch {
         _endPoint.emit(Resource.Loading())
-
-        val result = networkRepository.fetchLocationInfo(
-            newVal.latitude.toFloat(),
-            newVal.longitude.toFloat()
-        )
-        if (result.isSuccessful && result.body() != null) {
-            _endPoint.emit(Resource.Success(result.body()))
-        } else {
-            _endPoint.emit(Resource.Error(result.message()))
+        try {
+            val result = networkRepository.fetchLocationInfo(
+                newVal.latitude.toFloat(),
+                newVal.longitude.toFloat()
+            )
+            if (result.isSuccessful && result.body() != null) {
+                _endPoint.emit(Resource.Success(result.body()))
+            } else {
+                _endPoint.emit(Resource.Error(result.message()))
+            }
+        } catch (e: Exception) {
+            _endPoint.emit(Resource.Error(e.message ?: ""))
         }
     }
 

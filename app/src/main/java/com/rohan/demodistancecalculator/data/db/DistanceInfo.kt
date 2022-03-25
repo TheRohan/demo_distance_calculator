@@ -1,11 +1,12 @@
 package com.rohan.demodistancecalculator.data.db
 
 import android.graphics.Bitmap
+import androidx.annotation.Keep
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
+@Keep
 @Entity(tableName = "distance_info_table")
 data class DistanceInfo(
     var img: Bitmap? = null,

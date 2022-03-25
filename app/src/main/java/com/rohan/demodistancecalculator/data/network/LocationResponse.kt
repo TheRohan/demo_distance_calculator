@@ -1,7 +1,9 @@
 package com.rohan.demodistancecalculator.data.network
 
+import androidx.annotation.Keep
 import com.rohan.demodistancecalculator.data.db.LocationInfo
 
+@Keep
 data class LocationResponse(
     val address: Address?,
     val display_name: String?,
@@ -20,6 +22,7 @@ data class LocationResponse(
     )
 }
 
+@Keep
 data class Address(
     val city: String?,
     val country: String?,
